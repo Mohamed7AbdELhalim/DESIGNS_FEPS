@@ -1,7 +1,7 @@
 # DESIGNS_FEPS
 to know more please ask me
 
-##description for the project:
+## description for the project:
 
 ### 🌟 College Website Project Overview 🌟
 
