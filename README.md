@@ -1,7 +1,7 @@
 # DESIGNS_FEPS
 to know more please ask me
 
-description for the project:
+##description for the project:
 
 ### 🌟 College Website Project Overview 🌟
 
@@ -40,7 +40,7 @@ description for the project:
 10. **News and Announcements Section**:
     - Updates students with the latest news and important information related to the college. 📰
 
-💡 Suggestions for further improvement:
+#####💡 Suggestions for further improvement:
 - Consider adding a feedback mechanism for students to provide comments/suggestions.
 - Integrate a search functionality for easy course lookup.
 - Include a feature for real-time notifications about events or important deadlines.
