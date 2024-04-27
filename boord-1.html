@@ -3,22 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta  http-equiv="refresh" content="800" />
+    <meta  http-equiv="refresh" content="8" />
     <title>الدليل الطلابي للكلية</title>
     
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
         <style>
           /*تديل أتجاه النص*/
           div,p {
             direction:rtl;
+            text-align: right;            
           }
 
         .body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            text-align: right;            
-            direction: rtl;
+
             /* بقية الأنماط */
+        }
+
+        .Footer {
+          background-color: black;
         }
 
         .navbar {
@@ -79,51 +90,65 @@
             body, section { margin: 10px; padding: 10px; }
             */
         </style>
-
 </head>
 <body>
   <div class="navbar">
-<header>
-  <h1 style="color: white; text-align: center; padding: 1px;">مرحباً بكم في الدليل الطلابي للكلية</h1>
-</header>
                 <!-- الشريط الجانبي والتنقل -->
                   <!-- روابط التنقل -->
                                   <!-- اهم موضوع لتنظيم القوائم الخاصة بكل موضوع وهذا الزر ينقله إلى الصفحة الرسمية-->
-                  <a class="active" href="#" onclick="showTab('home')">Home</a>
-                  <a href="#" onclick="showTab('subjects')">Subjects</a>
-                  <a href="#" onclick="showTab('major')">Choosing a Major</a>
-                  <a href="#" onclick="showTab('faq')">faq</a>
-                  <a href="#" onclick="showTab('activities')">Student for activities</a>
-                  <a href="#" onclick="showTab('research')">Research Papers</a>
-                  <a href="#" onclick="showTab('exams')">Studying for Exams</a>
-                  <a href="#" onclick="showTab('contact')">Contact</a>
+                  <a class="active" href="#" onclick="showTab('home')">رئيسية</a>
+                  <a href="#" onclick="showTab('subjects')">مادة</a>
+                  <a href="#" onclick="showTab('major')">الأقسام</a>
+                  <a href="#" onclick="showTab('faq')">أسئلة مكررة</a>
+                  <a href="#" onclick="showTab('activities')">الأنشطة الطلابية</a>
+            <!--
+                  <a href="#" onclick="showTab('research')">عمل الابحاث</a>
+                  <a href="#" onclick="showTab('exams')">طريقة الدراسة للاختبارات</a>
+               يتم وضعها في footer
+               <a href="#" onclick="showTab('contact')">Contact</a> -->
                 </div>
+                
                 <div class="content">
                   <div id="home" class="tab active">
-  <h2>نبذة عن الكلية</h2>
-  <p>هنا توضع نبذة مختصرة عن الكلية...</p>
-  <br />
-    ...
+                   <!--<img src="https://th.bing.com/th/id/OIP.gz8G50C700qw3Ahn3vOjmAHaFj?rs=1&pid=ImgDetMain" alt="Nice car" style="width:100%"> -->
+                    <br /> 
+                    <h2>نبذة عن الكلية</h2>
+                    <p>هنا توضع نبذة مختصرة عن الكلية...</p>
+                    <ul class="w3-leftbar w3-theme-border" style="list-style:none">
+                      <li>Smaller and faster than other CSS frameworks.</li>
+                      <li>Easier to learn, and easier to use than other CSS frameworks.</li>
+                      <li>Uses standard CSS only (No jQuery or JavaScript library).</li>
+                      <li>Speeds up mobile HTML apps.</li>
+                      <li>Provides CSS equality for all devices. PC, laptop, tablet, and mobile:</li>
+                     </ul>
+                    <br />
+                      ...
+              <!-- Button trigger modal -->
+                <!-- زر لفتح ملف PDF في نافذة منبثقة -->
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#pdfModal">فتح الملف PDF</button>
+            </div>
+        </div>
+    </div>
 
-    ...
-<!-- باستخدام جافا سكريبت للتنقل -->
-<a href="#contact" onclick="showTab('contact'); return false;">اتصل بنا</a>
+<!-- PDF Modal -->
+<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pdfModalLabel">عنوان الملف PDF</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <embed id="pdfEmbed" src="https://drive.google.com/file/d/1EoI51Styg4-L5pvy910jZWAMFjKhhcl2/view?usp=sharing" type="application/pdf" width="100%" height="800px" />
+                <embed src="" type="application/pdf" width="100%" height="800px" />
 
-
-  <div class="map-container">
-    <!-- إضافة خريطة Google Maps
-    يجب تعديلها إلى الكود الذي يسبقه -->
-    <iframe
-      width="100%"
-      height="100%"
-      frameborder="0" style="border:0"
-      src=""
-      allowfullscreen>
-    </iframe>
-    <!-- https://www.google.com/maps/search/98%20Emtedad%20Hasan%20Al%20Maamon%2C%20Al%20Hay%20Al%20Asher%2C%20Nasr%20City%2C%20Cairo%20Governorate%204442113%2C%20Egypt/@30.0457900122286,31.3573411479592,17z-->
-
-    <a href=""></a>
-  </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
                 <!-- اهم موضوع لتنظيم المواد بالترتيب هنا -->
   </div>
   <div id="subjects" class="tab">
@@ -134,7 +159,6 @@
       <th>عدد الساعات</th>
       <th>التخصص</th>
       <th>كود المادة</th>
-      <th>اسم الدكتور</th>
       <th>متاح للتخصصات</th>
     </tr>
     <!-- بيانات المواد الخاصة بأولى-->
@@ -143,7 +167,6 @@
       <td>3</td>
       <td>pol</td>
       <td></td>
-      <td>د. </td>
       <td></td>
     </tr>
     <tr>
@@ -151,7 +174,6 @@
       <td>3</td>
       <td></td>
       <td></td>
-      <td>د. </td>
       <td></td>
     </tr>
     <tr>
@@ -159,7 +181,6 @@
       <td>3</td>
       <td></td>
       <td></td>
-      <td>د. </td>
       <td></td>
     </tr>
     <tr>
@@ -167,7 +188,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -175,7 +195,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -183,7 +202,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -191,7 +209,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -199,7 +216,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -207,7 +223,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -215,7 +230,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -223,7 +237,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -231,7 +244,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -239,7 +251,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -247,7 +258,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -255,7 +265,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -263,7 +272,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -271,7 +279,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -279,7 +286,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -287,7 +293,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -295,7 +300,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -303,7 +307,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -311,7 +314,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -319,7 +321,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -327,7 +328,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -335,7 +335,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -343,7 +342,6 @@
         <td>3</td>
         <td></td>
         <td></td>
-        <td>د. </td>
         <td></td>
       </tr>
       <tr>
@@ -352,750 +350,99 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -1927,19 +1274,19 @@
 <botton> 1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. </botton>
 <blockquote>
 <lu>
-  <ol>ما هي المواد الدراسية التي استمتعت بها أكثر خلال السنة الأولى؟</ol>
-  <ol>هل هناك مجال معين أشعر بشغف تجاهه أو أود استكشافه أكثر؟</ol>
-  <ol>ما هي المهارات التي أرغب في تطويرها خلال دراستي الجامعية؟</ol>
-  <ol>كيف يمكن للتخصص الذي أختاره أن يؤثر على فرص العمل المستقبلية؟</ol>
-  <ol>هل أفضل التخصصات النظرية أو التطبيقية؟</ol>
-  <ol>ما هي الفرص البحثية أو التدريبية المتاحة ضمن التخصصات المختلفة؟</ol>
-  <ol>هل أميل إلى العمل بشكل فردي أو ضمن فريق؟ وأي التخصصات يدعم هذا التوجه؟</ol>
-  <ol>هل هناك تخصصات تتيح لي الجمع بين اهتماماتي المختلفة؟</ol>
-  <ol>ما مدى أهمية الراتب المتوقع بعد التخرج في قراري لاختيار التخصص؟</ol>
-  <ol>هل ناقشت مع مرشدين أكاديميين أو مهنيين حول التخصصات التي أفكر فيها؟</ol>
-  <ol>ما هو التأثير الطويل الأمد لاختيار هذا التخصص على حياتي المهنية والشخصية؟</ol>
-  <ol>هل يمكنني الالتزام بمتطلبات التخصص من حيث الوقت والجهد المطلوب؟</ol>
-  <ol>هل استكشفت ما يقوله الطلاب الحاليون وخريجي التخصصات المحتملة عن تجاربهم؟</ol>
+  <lu>ما هي المواد الدراسية التي استمتعت بها أكثر خلال السنة الأولى؟</lu>
+  <lu>هل هناك مجال معين أشعر بشغف تجاهه أو أود استكشافه أكثر؟</lu>
+  <lu>ما هي المهارات التي أرغب في تطويرها خلال دراستي الجامعية؟</lu>
+
+  <lu>هل أفضل التخصصات النظرية أو التطبيقية؟</lu>
+  <lu>ما هي الفرص البحثية أو التدريبية المتاحة ضمن التخصصات المختلفة؟</lu>
+  <lu>هل أميل إلى العمل بشكل فردي أو ضمن فريق؟ وأي التخصصات يدعم هذا التوجه؟</lu>
+  <lu>هل هناك تخصصات تتيح لي الجمع بين اهتماماتي المختلفة؟</lu>
+  <lu>ما مدى أهمية الراتب المتوقع بعد التخرج في قراري لاختيار التخصص؟</lu>
+  <lu>هل ناقشت مع مرشدين أكاديميين أو مهنيين حول التخصصات التي أفكر فيها؟</lu>
+  <lu>ما هو التأثير الطويل الأمد لاختيار هذا التخصص على حياتي المهنية والشخصية؟</lu>
+  <lu>هل يمكنني الالتزام بمتطلبات التخصص من حيث الوقت والجهد المطلوب؟</lu>
+  <lu>هل استكشفت ما يقوله الطلاب الحاليون وخريجي التخصصات المحتملة عن تجاربهم؟</lu>
 </lu>
 </blockquote>
 <p>
@@ -1970,13 +1317,6 @@
 ...
 </div>
 
-  <div id="research" class="tab">        
-...
-  </div>
-  <div id="exams" class="tab">
-...
-  </div>
-
   <div id="contact" class="tab">
   <h2>المطورون</h2>
   <p>نحن مجموعة من الطلاب الذين اجتمعوا لإنشاء هذا الموقع...</p>
@@ -1992,20 +1332,59 @@
   
 
  </div> 
- <script> 
-function showTab(tabName) { const tabs = document.getElementsByClassName("tab"); for (let i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active"); } const tab = document.getElementById(tabName); tab.classList.add("active"); } 
-  
-  // JavaScript لإضافة التنقل السلس (اختياري)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+ <script>
+     // Function to set PDF URL and display modal
+     function openPDFModal(pdfURL, pdfTitle) {
+        // Set PDF URL
+        document.getElementById('pdfEmbed').setAttribute('src', pdfURL);
+        // Set PDF Title
+        document.getElementById('pdfModalLabel').innerHTML = pdfTitle;
+        // Display modal
+        $('#pdfModal').modal('show');
+    }
+ 
+    function showTab(tabName) { const tabs = document.getElementsByClassName("tab"); for (let i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active"); } const tab = document.getElementById(tabName); tab.classList.add("active"); } 
+      
+      // JavaScript لإضافة التنقل السلس (اختياري)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
-});
 </script>
 </div>
 
+<footer class="w3-container w3-teal" >
+  <h5>Footer</h5>
+  <p>Footer information goes here</p>
+
+  <!-- Bootstrap والتبعيات -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    ...
+<!-- باستخدام جافا سكريبت للتنقل -->
+<a href="#contact" onclick="showTab('contact'); return false;">اتصل بنا</a>
+
+
+  <div class="map-container">
+    <!-- إضافة خريطة Google Maps
+    يجب تعديلها إلى الكود الذي يسبقه -->
+    <iframe
+      width="100%"
+      height="100%"
+      frameborder="0" style="border:0"
+      src=""
+      allowfullscreen>
+    </iframe>
+    <!-- https://www.google.com/maps/search/98%20Emtedad%20Hasan%20Al%20Maamon%2C%20Al%20Hay%20Al%20Asher%2C%20Nasr%20City%2C%20Cairo%20Governorate%204442113%2C%20Egypt/@30.0457900122286,31.3573411479592,17z-->
+
+    <a href=""></a>
+  </div>
+</footer>
 </body>
 </html>
