@@ -47,3 +47,6 @@ to know more please ask me
 - Implement a responsive design for mobile users to improve accessibility.
 
 These features aim to enhance user experience and provide valuable resources for students interacting with the college website. Let me know if you need any more assistance or have any specific requirements! 🚀
+
+
+<progress id="myProgress" max="100" value="22"></progress>
