@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاريع الكلية</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f1f1f1;
+            padding: 1rem;
+        }
+        #content {
+            flex: 1;
+            padding: 1rem;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        .project-info {
+            display: flex;
+            justify-content: space-between;
+        }
+        .project-description, .project-details {
+            width: 48%;
+        }
+        .project-tags {
+            margin-top: 1rem;
+        }
+        .tag {
+            background-color: #3498db;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مشاريع الكلية</h1>
+    </header>
+    <main>
+        <div class="sidebar">
+            <button id="openSidebar">فتح القائمة</button>
+            <div id="sidebarContent" class="hidden">
+                <h2>قائمة المشاريع</h2>
+                <ul>
+                    <li><a href="#" onclick="loadContent('project1')">المشروع الأول</a></li>
+                    <li><a href="#" onclick="loadContent('project2')">المشروع الثاني</a></li>
+                    <li><a href="#" onclick="loadContent('project3')">المشروع الثالث</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <p>مرحبًا بك في صفحة مشاريع الكلية. هذه الصفحة تحتوي على معلومات عن المشاريع المختلفة التي يتم تنفيذها في الكلية. يمكنك استعراض المشاريع من خلال القائمة الجانبية.</p>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('openSidebar').addEventListener('click', function() {
+            document.getElementById('sidebarContent').classList.toggle('hidden');
+        });
+
+        function loadContent(projectId) {
+            let content = '';
+            switch(projectId) {
+                case 'project1':
+                    content = `
+                        <h2>المشروع الأول</h2>
+                        <div class="project-info">
+                            <div class="project-description">
+                                <h3>وصف المشروع</h3>
+                                <p>هذا هو وصف للمشروع الأول. يمكنك إضافة تفاصيل حول المشروع هنا.</p>
+                            </div>
+                            <div class="project-details">
+                                <h3>تفاصيل المشروع</h3>
+                                <ul>
+                                    <li>الفريق: فريق أ</li>
+                                    <li>المدة: 3 أشهر</li>
+                                    <li>الحالة: قيد التنفيذ</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <h3>الكلمات المفتاحية</h3>
+                            <span class="tag">تقنية</span>
+                            <span class="tag">برمجة</span>
+                            <span class="tag">تطوير</span>
+                        </div>
+                    `;
+                    break;
+                case 'project2':
+                    content = `
+                        <h2>المشروع الثاني</h2>
+                        <div class="project-info">
+                            <div class="project-description">
+                                <h3>وصف المشروع</h3>
+                                <p>هذا هو وصف للمشروع الثاني. يمكنك إضافة تفاصيل حول المشروع هنا.</p>
+                            </div>
+                            <div class="project-details">
+                                <h3>تفاصيل المشروع</h3>
+                                <ul>
+                                    <li>الفريق: فريق ب</li>
+                                    <li>المدة: 4 أشهر</li>
+                                    <li>الحالة: مكتمل</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <h3>الكلمات المفتاحية</h3>
+                            <span class="tag">بحث</span>
+                            <span class="tag">تحليل</span>
+                            <span class="tag">إحصاء</span>
+                        </div>
+                    `;
+                    break;
+                case 'project3':
+                    content = `
+                        <h2>المشروع الثالث</h2>
+                        <div class="project-info">
+                            <div class="project-description">
+                                <h3>وصف المشروع</h3>
+                                <p>هذا هو وصف للمشروع الثالث. يمكنك إضافة تفاصيل حول المشروع هنا.</p>
+                            </div>
+                            <div class="project-details">
+                                <h3>تفاصيل المشروع</h3>
+                                <ul>
+                                    <li>الفريق: فريق ج</li>
+                                    <li>المدة: 6 أشهر</li>
+                                    <li>الحالة: في مرحلة التخطيط</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <h3>الكلمات المفتاحية</h3>
+                            <span class="tag">تصميم</span>
+                            <span class="tag">واجهة المستخدم</span>
+                            <span class="tag">تجربة المستخدم</span>
+                        </div>
+                    `;
+                    break;
+                default:
+                    content = '<p>الرجاء اختيار مشروع من القائمة.</p>';
+            }
+            document.getElementById('content').innerHTML = content;
+        }
+    </script>
+</body>
+</html>
