@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Navigation Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #333;
+            transition: 0.3s;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+        .sidebar.open {
+            left: 0;
+        }
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+        .openbtn:hover {
+            background-color: #444;
+        }
+        #main {
+            transition: margin-left .3s;
+            padding: 20px;
+        }
+        .menu-icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#"><span class="menu-icon">&#9776;</span> Navigation Menu</a>
+        <a href="#"><span class="menu-icon">&#128269;</span> Search</a>
+        <a href="#"><span class="menu-icon">&#127968;</span> Home</a>
+        <a href="#"><span class="menu-icon">&#128218;</span> Library</a>
+        <a href="#"><span class="menu-icon">&#128193;</span> Documents</a>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="toggleNav()">&#9776; Toggle Sidebar</button>
+        <h2>Microsoft Bing Sidebar Navigation</h2>
+        <p>Click on the button above to open the sidebar navigation.</p>
+    </div>
+
+    <script>
+        function toggleNav() {
+            document.getElementById("mySidebar").classList.toggle("open");
+            document.getElementById("main").style.marginLeft = document.getElementById("mySidebar").classList.contains("open") ? "250px" : "0";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").classList.remove("open");
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+</body>
+</html>

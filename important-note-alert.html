@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Note</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .note-container {
+            position: relative;
+            background-color: #ffebee;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+        }
+        .note {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .question-mark {
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 40px;
+            animation: move 2s infinite alternate, light 1s infinite alternate;
+        }
+        @keyframes move {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(5px, -5px) rotate(10deg); }
+        }
+        @keyframes light {
+            0% { color: #ff0000; text-shadow: 0 0 5px #ff0000; }
+            100% { color: #ff6b6b; text-shadow: 0 0 20px #ff6b6b; }
+        }
+    </style>
+</head>
+<body>
+    <div class="note-container">
+        <p class="note">This is a very important note!</p>
+        <span class="question-mark">?</span>
+    </div>
+    <script>
+        const questionMark = document.querySelector('.question-mark');
+        questionMark.addEventListener('mouseover', () => {
+            alert('This note is important!');
+        });
+    </script>
+</body>
+</html>

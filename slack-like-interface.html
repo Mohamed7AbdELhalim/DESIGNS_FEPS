@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slack-like Interface</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            height: 100%;
+        }
+        .sidebar {
+            width: 60px;
+            background-color: #1a1d21;
+            color: white;
+            padding-top: 10px;
+        }
+        .sidebar-icon {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .main-area {
+            flex-grow: 1;
+            display: flex;
+        }
+        .channel-list {
+            width: 250px;
+            background-color: #19532b;
+            color: white;
+            padding: 20px;
+        }
+        .workspace-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .trial-info {
+            background-color: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .channel-item {
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .channel-item:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        .add-item {
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+        }
+        .chat-area {
+            flex-grow: 1;
+            background-color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-icon">AG</div>
+            <div class="sidebar-icon">🏠</div>
+            <div class="sidebar-icon">💬</div>
+            <div class="sidebar-icon">🔔</div>
+            <div class="sidebar-icon">...</div>
+        </div>
+        <div class="main-area">
+            <div class="channel-list">
+                <div class="workspace-name">A gathering of friends ▼</div>
+                <div class="trial-info">⏳ 10 days left in trial</div>
+                <div class="section-title">Threads</div>
+                <div class="channel-item">🏴 learn English</div>
+                <div class="channel-item"># beginner-en</div>
+                <div class="channel-item"># proj-</div>
+                <div class="section-title">Channels</div>
+                <div class="channel-item"># general</div>
+                <div class="channel-item"># random</div>
+                <div class="add-item">+ Add channels</div>
+                <div class="section-title">Direct messages</div>
+                <div class="channel-item">🤖 s22bdocs1e02060</div>
+                <div class="channel-item">👤 Mohamed AbdElhalim you</div>
+                <div class="add-item">+ Add coworkers</div>
+                <div class="section-title">Apps</div>
+                <div class="add-item">+ Add apps</div>
+            </div>
+            <div class="chat-area">
+                <!-- Chat content would go here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add any necessary JavaScript here
+        // For example, you could add click handlers to the channel items
+        document.querySelectorAll('.channel-item').forEach(item => {
+            item.addEventListener('click', () => {
+                console.log('Clicked on:', item.textContent);
+                // Here you would typically update the chat area
+            });
+        });
+    </script>
+</body>
+</html>
